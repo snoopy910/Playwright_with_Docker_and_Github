@@ -28,4 +28,6 @@ test("test", async ({ page }) => {
 		.getByLabel("Main", { exact: true })
 		.getByRole("link", { name: "Python" })
 		.click();
+	await page.getByRole("link", { name: "JavaScript" }).click();
+	await page.getByRole("tab", { name: "pnpm" }).click();
 });

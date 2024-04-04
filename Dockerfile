@@ -9,6 +9,3 @@ WORKDIR /e2e
 RUN npm install
 # Install browsers
 RUN npx playwright install
-
-# Run playwright test
-CMD [ "npx", "playwright", "test", "--reporter=list" ]

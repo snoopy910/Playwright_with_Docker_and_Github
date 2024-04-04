@@ -18,8 +18,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Set up docker compose
-        run: |
-          docker-compose build
+        - uses: adambirds/docker-compose-action@v1.3.0
+          with: 
+            compose-file: "./docker-compose.yml"
+          env:
+            CUSTOM_VARIABLE: "test"
+
       - name: Build and run docker compose service
         run: |
           docker-compose up -d

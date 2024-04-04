@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  playwright-test:
+    build: .
+    image: test-image:latest
+    container_name: playwright-test

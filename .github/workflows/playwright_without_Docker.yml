@@ -1,5 +1,4 @@
 name: Docker Build and Playwright Test
-# Workflow without Docker
 
 on:
   push:

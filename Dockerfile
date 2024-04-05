@@ -10,4 +10,5 @@ RUN npm install
 # Install browsers
 RUN npx playwright install
 # Test
-CMD ["npx", "playwright", "test"]
+# CMD ["npx", "playwright", "test"]
+RUN npx playwirght test

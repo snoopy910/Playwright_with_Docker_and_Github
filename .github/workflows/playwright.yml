@@ -8,14 +8,15 @@ jobs:
   playwright:
     name: "Playwright Tests"
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.42.1-jammy
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # need checkout before using docker-compose-action
+      - uses: actions/checkout@v3
+      - uses: adambirds/docker-compose-action@v1.3.0
         with:
-          node-version: 18
-      - name: Install dependencies
-        run: npm ci
-      - name: Build the stack
-        run: docker-compose up -d
+          compose-file: "./docker/docker-compose.yml"
+          down-flags: "--volumes"
+          services: |
+            helloworld2
+            helloworld3
+          test-container: helloworld
+          test-command: "npm test"

@@ -1,0 +1,35 @@
+name: Docker Build and Playwright Test
+# Workflow without Docker
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  playwright:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: |
+          cd apps/simplepmp
+          npm ci
+          npm install -g pnpm
+      - name: Install Playwright Browsers
+        run: |
+          cd apps/simplepmp
+          pnpm install
+          pnpm exec playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

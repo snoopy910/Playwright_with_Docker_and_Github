@@ -11,4 +11,4 @@ RUN npm install
 RUN npx playwright install
 # Test
 # CMD ["npx", "playwright", "test"]
-RUN npx playwirght test
+RUN npx playwright test

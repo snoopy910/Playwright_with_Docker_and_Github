@@ -18,16 +18,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Set up docker compose
-        - uses: adambirds/docker-compose-action@v1.3.0
+        - uses: hoverkraft-tech/compose-action@v1.5.1
           with: 
             compose-file: "./docker-compose.yml"
           env:
             CUSTOM_VARIABLE: "test"
 
-      - name: Build and run docker compose service
-        run: |
-          docker-compose up -d
-          docker-compose ps
       - name: Run your tests
         run: npx playwright test
         env:

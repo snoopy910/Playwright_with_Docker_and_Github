@@ -2,9 +2,9 @@ name: Docker Build and Playwright Test
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, dev]
   pull_request:
-    branches: [main, master]
+    branches: [main, dev]
 
 jobs:
   playwright:
@@ -36,3 +36,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - name: Deploy to main branch
+        if: success()
+        run: |
+          git checkout main
+          git pull origin main
+          git merge dev
+          git push origin main

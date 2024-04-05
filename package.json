@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "playwright-ctrf-json-reporter": "^0.0.9"
+  }
+}

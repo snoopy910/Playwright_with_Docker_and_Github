@@ -17,9 +17,9 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: |
-          cd apps/simplepmp
           npm ci
           npm install -g pnpm
+        working-directory: apps/simplepmp/
       - name: Install Playwright Browsers
         run: |
           cd apps/simplepmp

@@ -1,0 +1,62 @@
+{
+  "results": {
+    "tool": {
+      "name": "playwright"
+    },
+    "summary": {
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1712344275274,
+      "stop": 1712344282947,
+      "suites": 0
+    },
+    "tests": [
+      {
+        "name": "test",
+        "status": "passed",
+        "duration": 6799,
+        "start": 1712344275,
+        "stop": 1712344282,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "E:\\2.Other Project\\Playwright_with_Docker_and_Github\\tests\\example.spec.ts",
+        "retry": 0,
+        "flake": false,
+        "suite": "chromium > example.spec.ts"
+      },
+      {
+        "name": "test",
+        "status": "passed",
+        "duration": 5223,
+        "start": 1712344275,
+        "stop": 1712344280,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "E:\\2.Other Project\\Playwright_with_Docker_and_Github\\tests\\example.spec.ts",
+        "retry": 0,
+        "flake": false,
+        "suite": "firefox > example.spec.ts"
+      },
+      {
+        "name": "test",
+        "status": "passed",
+        "duration": 5930,
+        "start": 1712344275,
+        "stop": 1712344281,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "E:\\2.Other Project\\Playwright_with_Docker_and_Github\\tests\\example.spec.ts",
+        "retry": 0,
+        "flake": false,
+        "suite": "webkit > example.spec.ts"
+      }
+    ]
+  }
+}

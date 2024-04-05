@@ -36,10 +36,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      - name: Deploy to dev branch
+      - name: Deploy to main branch
         if: success()
         run: |
-          git checkout -b dev
-          git add .
-          git commit -m "Automated deployment to dev branch"
-          git push origin dev
+          git checkout main
+          git pull origin main
+          git merge dev
+          git push origin main

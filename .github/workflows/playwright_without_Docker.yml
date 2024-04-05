@@ -3,8 +3,9 @@ name: Docker Build and Playwright Test
 
 on:
   push:
-    branches:
-      - dev
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
 
 jobs:
   playwright:
@@ -17,9 +18,10 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: |
+          cd apps/simplepmp/
           npm ci
           npm install -g pnpm
-        working-directory: apps/simplepmp/
+        # working-directory: apps/simplepmp/
       - name: Install Playwright Browsers
         run: |
           cd apps/simplepmp

@@ -24,11 +24,13 @@ jobs:
         # working-directory: apps/simplepmp/
       - name: Install Playwright Browsers
         run: |
-          cd apps/simplepmp
+          cd apps/simplepmp/
           pnpm install
           pnpm exec playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run: |
+          cd apps/simplepmp
+          pnpm exec playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:

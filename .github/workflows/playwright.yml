@@ -18,9 +18,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Set up docker compose
-        - uses: hoverkraft-tech/compose-action@v1.5.1
-          with: 
-            compose-file: "./docker-compose.yml"
+        uses: hoverkraft-tech/compose-action@v1.5.1
+        with:
+          compose-file: "./docker-compose.yml"
       - name: Run your tests
         run: npx playwright test
         env:

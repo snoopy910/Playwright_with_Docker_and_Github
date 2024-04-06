@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "playwright-ctrf-json-reporter": "^0.0.9"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.43.0",
+    "playwright": "^1.43.0"
   }
 }
